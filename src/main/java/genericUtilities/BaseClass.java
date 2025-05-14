@@ -12,16 +12,17 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 
 import ObjectRepo.HomePage;
 import ObjectRepo.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+@Listeners
 public class BaseClass 
 {
 	public PropertyFileUtility putil= new PropertyFileUtility();
-	public ExcelFileUtility eutil=new ExcelFileUtility();
 	public SeleniumUtility sutil=new SeleniumUtility();
 	public WebDriver driver;
 	
@@ -33,7 +34,7 @@ public class BaseClass
 	{
 		System.out.println("****DB connection successful****");
 	}
-
+	
 	@BeforeClass(alwaysRun=true)
 	public void bcconfig() throws Throwable
 	{
